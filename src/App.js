@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import CountryInfoCard from "./Component/CountryInfoCard/CountryInfoCard";
 import ErrorMsg from "./Component/ErrorMsg/ErrorMsg";
-
-const searchByOptions = [
-  "Please select a search option",
-  "name",
-  "alpha",
-  "currency",
-  "lang",
-  "capital",
-  "region",
-  "subregion",
-];
 
 const searchOptions = {
   "Please select a search option": [
@@ -173,7 +162,7 @@ function App() {
       <div>
         <p
           className={
-            countryList.length == 0
+            countryList.length === 0
               ? "hidden"
               : "font-bold text-gray-200 p-2"
           }
