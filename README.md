@@ -15,3 +15,5 @@ I made use of the Rest Countries API: https://restcountries.com/
 
 
 Tech stack used: ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+![screenshot](https://user-images.githubusercontent.com/46455250/186255539-5be67a64-7861-49eb-8d3e-64716942aad8.png)
