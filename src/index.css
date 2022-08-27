@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    --font-nunito: 'Nunito', sans-serif;
+:root {
+  --font-nunito: "Nunito", sans-serif;
 }
 
-body{
-    font-family: var(--font-nunito);
-    font-weight: 400;
-    background-image: linear-gradient(180deg, #ad1deb 0%, #6e72fc 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  font-family: var(--font-nunito);
+  font-weight: 400;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
 }
