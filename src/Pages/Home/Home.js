@@ -73,6 +73,12 @@ function Home() {
     }
   };
 
+  const submitFormOnEnter=(event)=> {
+    if (event.keyCode === 13) {
+        fetchApi();
+    }
+}
+
   return (
     <div className="app-container h-full lg:h-screen flex flex-col items-center p-12">
       <ToastContainer />
@@ -136,6 +142,7 @@ function Home() {
                 name="inputText"
                 onChange={handleChange}
                 value={inputData.inputText}
+                onKeyDown={(e)=> submitFormOnEnter(e)}
               />
               <button
                 type="submit"
