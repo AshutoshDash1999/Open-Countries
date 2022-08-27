@@ -23,7 +23,7 @@ function CountryInfoCard({
         </p>
       </div>
       <div className="flex flex-col justify-start md:flex-row md:justify-between md:space-x-4">
-        <div>
+        <div className="md:w-3/5">
           <p>
             <span className="font-bold">Currency: </span>
             <span>{currencyName}</span> <span>({currencySymbol})</span>
@@ -34,7 +34,7 @@ function CountryInfoCard({
           </p>
           <p>
             <span className="font-bold">Time Zones: </span>
-            {timezones}
+            {Object.values(timezones).join(', ')}
           </p>
         </div>
         <div>
