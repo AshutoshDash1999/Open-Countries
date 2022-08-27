@@ -17,18 +17,35 @@
 }
 
 @keyframes entranceAnimation {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-     }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.entrance-animate{
-    animation: entranceAnimation ease 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.entrance-animate {
+  animation: entranceAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+div.about_country {
+  background-color: #50e3c2;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(162, 77%, 40%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(198, 100%, 50%) 0, transparent 55%);
+}
+
+div.about_country div{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
 }
