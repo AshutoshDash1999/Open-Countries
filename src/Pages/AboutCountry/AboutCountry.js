@@ -1,6 +1,8 @@
+import { Disclosure } from "@headlessui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import HashLoader from "react-spinners/HashLoader";
 
 function AboutCountry() {
   let location = useLocation();
@@ -17,14 +19,14 @@ function AboutCountry() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [countryFullName]);
 
   console.log(countryData);
   return (
     <div className="about_country h-screen flex justify-center items-center">
-      <div className="p-8 rounded-lg shadow-xl">
+      <div className="p-8 rounded-lg shadow-xl w-11/12 md:w-10/12 lg:w-8/12 xl:w-2/5">
         {typeof countryData != "undefined" ? (
-          <div className="p-8 bg-transparent flex">
+          <div className="p-8 bg-transparent flex flex-col md:flex-row md:justify-evenly">
             <div className="border-none">
               <h2 className="text-3xl font-bold">
                 {countryData[0]["name"]["official"]}
@@ -51,12 +53,10 @@ function AboutCountry() {
                   </li>
                 ))}
               </ul>
-              
+
               <p className="text-xl">
                 <span className="font-semibold">Demonyms:</span>{" "}
-                <span>
-                  {countryData[0]["demonyms"]["eng"].f}
-                </span>
+                <span>{countryData[0]["demonyms"]["eng"].f}</span>
               </p>
               <p className="text-xl">
                 <span className="font-semibold">Population:</span>{" "}
@@ -73,14 +73,36 @@ function AboutCountry() {
                   ({Object.values(countryData[0]["currencies"])[0].symbol})
                 </span>
               </p>
+              <p>
+                <a
+                  className="cursor-pointer underline underline-offset-2 text-emerald-500"
+                  href={countryData[0]["maps"]["googleMaps"]}
+                >
+                  View Map
+                </a>
+              </p>
             </div>
-            <div className="px-8 flex flex-col justify-center items-center">
-                <img className="h-36 shadow-md rounded-lg border-2 p-4" src={countryData[0]["flags"]["png"]} alt="" />
-                <img className="h-36 p-4" src={countryData[0]["coatOfArms"]["png"]} alt="" />
+            <div className="px-8 flex flex-col justify-center items-center space-y-4 ">
+              <div>
+                <img
+                  className="h-36 object-cover shadow-md rounded-lg border-2 p-4 w-full"
+                  src={countryData[0]["flags"]["png"]}
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-36 object-cover p-4"
+                  src={countryData[0]["coatOfArms"]["png"]}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         ) : (
-          <p>loading</p>
+          <div className="flex justify-center">
+            <HashLoader color="#9333ea" loading={true} size={100} />
+          </div>
         )}
       </div>
     </div>

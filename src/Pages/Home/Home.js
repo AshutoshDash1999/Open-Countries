@@ -190,7 +190,7 @@ function Home() {
                 subRegion={item.subregion}
                 population={Number(item.population).toLocaleString()}
                 timezones={item.timezones}
-                map={item.maps.googleMaps}
+                demonyms={item.demonyms.eng.f}
               />
             </Link>
           )

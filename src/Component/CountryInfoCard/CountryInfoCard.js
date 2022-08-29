@@ -8,7 +8,7 @@ function CountryInfoCard({
   currencySymbol,
   capital,
   subRegion,
-  map,
+  demonyms,
   population,
   timezones,
   flag,
@@ -34,7 +34,7 @@ function CountryInfoCard({
           </p>
           <p>
             <span className="font-bold">Time Zones: </span>
-            {Object.values(timezones).join(', ')}
+            {Object.values(timezones).join(", ")}
           </p>
         </div>
         <div>
@@ -46,13 +46,9 @@ function CountryInfoCard({
             <span className="font-bold">Region: </span>
             {subRegion}
           </p>
-          <p>
-            <a
-              className="cursor-pointer underline underline-offset-2 text-emerald-500"
-              href={map}
-            >
-              View Map
-            </a>
+          <p className="">
+            <span className="font-bold">Demonyms:</span>{" "}
+            <span>{demonyms}</span>
           </p>
         </div>
       </div>
