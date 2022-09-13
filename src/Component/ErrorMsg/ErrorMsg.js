@@ -2,7 +2,7 @@ import React from "react";
 
 function ErrorMsg() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="mt-4 flex flex-col justify-center items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-20 w-20"
